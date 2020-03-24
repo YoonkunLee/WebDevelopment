@@ -9,20 +9,20 @@
 		<label>Status Code (required): <input type="text" name="statusCode"></label><br>
 		<label>Status (required): <input type="text" name="status"></label><br>
 		<label>Share: 
-			<input type="radio" name="share" id="public" value="1">
+			<input type="radio" name="share" id="public" value="Public">
 			<label for="public">Public</label>
-			<input type="radio" name="share" id="freinds" value="2">
+			<input type="radio" name="share" id="freinds" value="Freinds">
 			<label for="freiends">Freiends</label>
-			<input type="radio" name="share" id="onlyme" value="3">
+			<input type="radio" name="share" id="onlyme" value="Only Me">
 			<label for="onlyme">Only Me</label>
 		</label><br>
 		<label>Date: <input type="date" name="date" value="<?php echo date('Y-m-d');?>"></label><br>
 		<label>Permission Type: 
-			<input type="checkbox" name="permissiontype" id="allowLike" value="1">
+			<input type="checkbox" name="permissiontype[]" id="allowLike" value="Allow Like">
 			<label for="allowLike">Allow Like</label>
-			<input type="checkbox" name="permissiontype" id="allowComment" value="2">
+			<input type="checkbox" name="permissiontype[]" id="allowComment" value="Allow Comment">
 			<label for="allowComment">Allow Comment</label>
-			<input type="checkbox" name="permissiontype" id="allowShare" value="3">
+			<input type="checkbox" name="permissiontype[]" id="allowShare" value="Allow Share">
 			<label for="allowShare">Allow Share</label>
 		</label><br><br>
 		<input type="submit" value="Post">
