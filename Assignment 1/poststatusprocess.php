@@ -4,8 +4,10 @@
     </head>
     <body>
         <?php
+			//read database connection info from external file
             require_once('../../conf/sqlinfo.inc.php');
-            $connection = @mysqli_connect(
+            //connection to database and if there is an error return error message
+			$connection = @mysqli_connect(
                 $sql_host, 
                 $sql_user, 
                 $sql_pass, 
