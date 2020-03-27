@@ -27,33 +27,44 @@
                 die("Unable to execute the query." . mysqli_error($connection));
             echo "Successfully executed the query. <br>";
             
-            $passRegulerExpression = 0;
+            $passRule = TRUE;
             if (isset ($_POST["statusCode"])){
                 $_statusCode = $_POST["statusCode"];
+
+                $query = "SELECT status_code FROM $sql_table WHERE status_code ='$_statusCode'";
+                $result=mysqli_query($connection, $query)
+                or die("unable to execute");
+                
+                $numRows = mysqli_num_rows($result);               
                 $_statusCodeLength = strlen($_statusCode);
                 $_firstCharacter = substr($_statusCode, 0, 1);
                 $_restCharacter = substr($_statusCode, 1, $_statusCodeLength);
                
+                if($numRows){
+                    echo "<p>(Status Code) Your Input Code is founded. It is not a unique code!</p>";
+                    $passRule = FALSE;
+                }
+
                 if($_statusCodeLength != 5 || $_statusCodeLength == 0){
-                    echo "<p>(Status Code) Input must be within 5 characters or cannot be empty</p>";                
-                    $passRegulerExpression = 1;
+                    echo "<p>(Status Code) Input must be within 5 characters or cannot be empty!</p>";                
+                    $passRule = FALSE;
                 }                
                 else{
                     if(strcmp($_firstCharacter, 'S')){
                         echo "<p>(Status Code) First Character must start with uppercase S!</p>";
-                        $passRegulerExpression = 1;
+                        $passRule = FALSE;
                     }
                     else{
                         if(ctype_digit($_restCharacter) != 1){
                             echo "<p>(Status Code) Second Chacter to last chater must be a number!</p>";
-                            $passRegulerExpression = 1;
+                            $passRule = FALSE;
                         }
                     }
                 }                        
             }
             else{
                 echo "<p>(Status Code) Input is Needed cannot be empty!</p>";
-                $passRegulerExpression = 1;
+                $passRule = FALSE;
             }
 
             if(isset($_POST["status"])){                
@@ -61,13 +72,13 @@
                 $_stausLength = strlen($_staus);
                 $pattern = '/^[a-zA-z ,.!?]+$/';
                 if($_stausLength == 0){
-                    echo "<p>(Status) Input is required cannnot be empty</p>";
-                    $passRegulerExpression = 1;                    
+                    echo "<p>(Status) Input is required cannnot be empty!</p>";
+                    $passRule = FALSE;                    
                 }
                 else{
                     if(!preg_match($pattern, $_staus)){
-                        echo "<p>(Staus) Input has an error.</p>";
-                        $passRegulerExpression = 1;
+                        echo "<p>(Staus) Input has an error!</p>";
+                        $passRule = FALSE;
                     }
                 }                                
             }
@@ -77,7 +88,7 @@
 
                 if($_date == null){
                     echo "<p>(Date) Input is required cannot be emoty!</p>";
-                    $passRegulerExpression = 1;
+                    $passRule = FALSE;
                 }
             }
 
@@ -88,19 +99,8 @@
                 array_push($permissionList, $check);
             } 
             $_permissiontypeList= implode(",", $permissionList);
-            echo $permissiontypeList;
-
-            if($passRegulerExpression == 1){
-                echo 'Please try again!<br><a href="./poststatusform.php">Return to Status Form Page</a>';
-            }
-            if($passRegulerExpression==0){
-                echo $_statusCode;
-                echo $_staus;
-                echo $_share;
-                echo $_date;
-                echo $_permissiontypeList;
-
-                
+           
+            if($passRule){
                 $sql = "INSERT INTO post (status_code, status_content, share, input_date, permission)
                 VALUES('$_statusCode', '$_staus', '$_share', '$_date', '$_permissiontypeList')";
                 if(mysqli_query($connection, $sql)){
@@ -110,6 +110,13 @@
                     echo "Error" . $sql . "<br>" .mysqli_error($connection);
                 }
             }
+            else{
+                echo 'Please try again!<br><a href="./poststatusform.php">Register for another post</a>';
+                echo '<div align="right"><a href="./index.html">Return to Home Page</a><div>';
+            }
+
+            mysqli_free_result($result);
+            mysqli_close($connection);
         ?>
     </body>
 </html>
