@@ -6,7 +6,8 @@
         <?php
 			//read database connection info from external file
             require_once('../../conf/sqlinfo.inc.php');
-            //connection to database and if there is an error return error message
+            /*Read connection detail from sqlinfo.inc.php and connect to database 
+            if there is an error while connecting, it returns proper error message*/
 			$connection = @mysqli_connect(
                 $sql_host, 
                 $sql_user, 
