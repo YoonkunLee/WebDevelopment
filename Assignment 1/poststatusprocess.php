@@ -16,7 +16,6 @@
             if(!$connection){
                 die("Connection failed: " . mysqli_connect_error());
             }
-            echo "Your connection is sucess <br>";
 
             $sqlString = "CREATE TABLE IF NOT EXISTS post (
                     status_code VARCHAR(5) NOT NULL,
@@ -26,7 +25,6 @@
                     permission VARCHAR(200))";
             $queryResult = @mysqli_query($connection, $sqlString) or
                 die("Unable to execute the query." . mysqli_error($connection));
-            echo "Successfully executed the query. <br>";
             
             $passRule = TRUE;
             if (isset ($_POST["statusCode"])){

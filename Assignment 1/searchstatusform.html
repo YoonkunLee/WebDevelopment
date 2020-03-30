@@ -2,15 +2,19 @@
 <html>
 <head>
     <title>search form</title>
-    <meta http-equiv="Content-type" content="text/html" charset="utf-8">    
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 </head>
 <body>
     <h1>Status posting System</h1><br>
     <form action="searchstatusprocess.php" method="GET">
-        <label>Status: <input type="text" name="statusInput">
-        <input type="submit" value="View Status"></input>
-        </label>
+        <div class="form-group">
+            <label>Status: <input type="text" name="statusInput">
+                <input type="submit" class="btn btn-primary" value="View Status"></input>       
+            </label> 
+        </div>              
     </form><br>
     <a href="index.html">Return to Home Page</a>
+   
 </body>
 </html>
