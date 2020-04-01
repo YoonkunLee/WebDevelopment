@@ -1,0 +1,40 @@
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+}
+
+h1{
+    background-color: #148ed6;
+    color:white;
+    padding: 15px;
+}
+
+p{
+    font-size: large;
+    margin:1px;
+}
+
+.declareParagragh{
+    border-style: solid;
+    border-color: #ff3030;
+    border-width: 5px;
+    margin-bottom: 40px;
+    padding:15px;
+}
+
+.indexDetail{
+    margin-left:2%;
+}
+
+.linkToPage{
+    float: left;
+    margin-left:15px;
+    margin-top:3px;
+}
+
+.returnToHome{
+    float: right;
+    margin-top:3px;
+}
+

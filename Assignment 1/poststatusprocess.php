@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>search status process</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+	    <link href="style/style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <?php

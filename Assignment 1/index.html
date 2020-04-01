@@ -4,19 +4,40 @@
 	<title>Index page</title>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1>Status Posting System</h1>
+	<h1 class="font-weight-bold">Status Posting System</h1>
 	<br/>
-	<h4>Name: Yoonkun Lee</h4>
-	<h4>Student ID: 1314356</h4>
-	<h4>Email: ydx9474@aut.ac.nz</h4>
-	</br>
-	<p>I declare that this assignment is my individual work. I have not worked collavoratively nor have 
-	I copied from any other student's work or from any other source</p>
-	
-	<a href="./poststatusform.php">Post a new status<a><br/>
-	<a href="./searchstatusform.html">Search status<a>
-	<div align="right"><a href="./about.html">About this assignment<a></div>
+	<div class="indexDetail">
+		<form>
+			<div class="form-group row">
+				<label for="name" class="col-sm-3 col-form-label font-weight-bold">Name :</label>
+				<div class="col-sm-9">
+					<input type="text" readonly class="form-control-plaintext" name="name" id="name" value="Yoonkun Lee">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="studentID" class="col-sm-3 col-form-label font-weight-bold">Student ID :</label>
+				<div class="col-sm-9">
+					<input type="text" readonly class="form-control-plaintext" id="studentID" value="1314356">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="email" class="col-sm-3 col-form-label font-weight-bold">Email :</label>
+				<div class="col-sm-9">
+					<input type="text" readonly class="form-control-plaintext" id="email" value="ydx9474@aut.ac.nz">
+				</div>
+			</div>
+		</form>		
+		</br>
+		<div class="declareParagragh"><p>I declare that this assignment is my individual work. I have not worked collavoratively nor have 
+			I copied from any other student's work or from any other source.</p></div>
+	</div>		
+	<div>
+		<a class="btn btn-primary linkToPage" href="./poststatusform.php">Post a new status<a>
+		<a class="btn btn-primary linkToPage" href="./searchstatusform.html">Search status<a>
+		<div class="returnToHome"><a class="btn btn-outline-info" href="./about.html">About this assignment<a></div>
+	</div>		
 </body>
 </html>
