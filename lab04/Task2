@@ -1,0 +1,23 @@
+1. All records
+
+	SELECT * FROM car
+	
+2. Make, model, and price, sorted by make and model
+
+	SELECT make, model, price FROM car
+	ORDER BY make, model ASC;
+
+3. The make and model of the cars which cost $20,000 or more.
+
+	SELECT make, model FROM car
+	WHERE price >= 20000
+
+4. The make and model of the cars which cost below $15,000.
+	
+	SELECT make, model FROM car
+	WHERE price < 15000
+
+5. The average price of cars for a similar model
+
+	SELECT make, model, AVG(price) FROM car
+	GROUP BY model

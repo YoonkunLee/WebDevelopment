@@ -1,14 +1,19 @@
+<!--
+	This page is using POST method that when submit button is clicked, all input field's value is going to poststatusprocess.php
+	One of input field 'Date' value is set by current date time but it can be change by user.
+	This page has 3 different buttons which are 'Post' that submit all input field, 'Reset' that reset all current user input as a default and 'Return to Home' button that user can go back to index page
+-->
 <html>
 <head>
 	<title>Index page</title>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<h1> Status Posting System</h1>	
 	</br>
-	<form action ="poststatusprocess.php"  method = "post" >
+	<form class="font-weight-bold" action ="poststatusprocess.php" method = "POST" >
 		<div class="form-group row">
 			<label for="statusCode" class="col-sm-3 col-form-label">Status Code (required):</label> 
 			<div class="col-sm-9">
@@ -18,7 +23,7 @@
 		<div class="form-group row">
 			<label for="status" class="col-sm-3 col-form-label">Status (required):</label>
 			<div class="col-sm-9">
-				<input class="form-control" type="text" id="status" name="status">
+				<input class="form-control" type="text" id="status" name="status" placeholder="Enter Status">
 			</div>
 		</div>
 		<div class="form-group">
@@ -81,12 +86,9 @@
 		<div>
 			<input class="btn btn-primary" type="submit" value="Post">
 			<input class="btn btn-danger" type="reset" value="Reset">			
-			<div class="returnToHome"><a class="btn btn-outline-info" href="./index.html">Return To Home<a></div>
+			<div class="returnToHome"><a class="btn btn-outline-info" href="./index.html">Return To Home</a></div>
 		</div>
 	</div>
 	</form>
-<?php
-	
-?>
 </body>
 </html>

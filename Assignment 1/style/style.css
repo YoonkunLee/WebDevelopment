@@ -1,6 +1,6 @@
 body{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 10px;
 }
 
@@ -38,3 +38,6 @@ p{
     margin-top:3px;
 }
 
+p {
+    margin-bottom: 20px;
+}

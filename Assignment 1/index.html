@@ -1,16 +1,21 @@
+<!--
+	This page contains my student infomation and declaration for plagarism. 
+	This file also contains different links which are 'Post a new status' that user can upload a new status into database, 'Search status' that search status from database and 'About this assignment' that it moves into report page
+	Lastly, it contains bootstap and style.css for improve layout, colours and styles.
+-->
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Index page</title>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1 class="font-weight-bold">Status Posting System</h1>
-	<br/>
-	<div class="indexDetail">
-		<form>
+	<form>
+		<h1 class="font-weight-bold">Status Posting System</h1>
+		<br/>
+		<div class="indexDetail">			
 			<div class="form-group row">
 				<label for="name" class="col-sm-3 col-form-label font-weight-bold">Name :</label>
 				<div class="col-sm-9">
@@ -28,16 +33,16 @@
 				<div class="col-sm-9">
 					<input type="text" readonly class="form-control-plaintext" id="email" value="ydx9474@aut.ac.nz">
 				</div>
-			</div>
-		</form>		
-		</br>
-		<div class="declareParagragh"><p>I declare that this assignment is my individual work. I have not worked collavoratively nor have 
-			I copied from any other student's work or from any other source.</p></div>
-	</div>		
-	<div>
-		<a class="btn btn-primary linkToPage" href="./poststatusform.php">Post a new status<a>
-		<a class="btn btn-primary linkToPage" href="./searchstatusform.html">Search status<a>
-		<div class="returnToHome"><a class="btn btn-outline-info" href="./about.html">About this assignment<a></div>
-	</div>		
+			</div>				
+			</br>
+			<div class="declareParagragh font-weight-bold"><p>I declare that this assignment is my individual work. I have not worked collavoratively nor have 
+				I copied from any other student's work or from any other source.</p></div>
+		</div>		
+		<div>
+			<a class="btn btn-primary linkToPage" href="./poststatusform.php">Post a new status</a>
+			<a class="btn btn-info linkToPage" href="./searchstatusform.html">Search status</a>
+			<div class="returnToHome"><a class="btn btn-outline-info" href="./about.html">About this assignment</a></div>
+		</div>	
+	</form>	
 </body>
 </html>
